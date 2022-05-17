@@ -19,7 +19,7 @@ def get_videos(puppet):
     return videos
 
 def get_common_videos(topVideos):
-    common = set(topVideos['Far Left'])
+    common = set(topVideos.get('Far Left', []))
     for label in ['Moderate', 'Far Right']:
         if label in topVideos and len(topVideos[label]) > 0:
             common = common & set(topVideos[label])
