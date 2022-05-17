@@ -49,7 +49,7 @@ def get_sock_puppet(ideology, puppetId):
     return sockpuppet
 
 def get_top_videos(date):
-    topVideos = TOP_DAILY[date]
+    topVideos = dict(TOP_DAILY[date])
     videos = set()
     for label in topVideos:
         for video in topVideos[label]:
