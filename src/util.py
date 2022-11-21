@@ -19,5 +19,9 @@ def get_videos(puppet):
     return videos
 
 def get_common_videos(topVideos):
-    sets = [set(i) for i in topVideos.values()]
+    sets = [
+        set(topVideos.get('Far Left', [])),
+        set(topVideos.get('Moderate', [])),
+        set(topVideos.get('Far Right', []))
+    ]
     return list(set.intersection(*sets))
